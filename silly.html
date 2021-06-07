@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="look.css">
+    <link rel="icon"
+ href="favicon32.png">
+    <title>math</title>
+</head>
+<body>
+    <h1>series</h1>
+
+    <h2>arithmetic</h2>
+    <p>An arithmetic series is just an initial number with a common difference which is added for every next term.</p>
+    <div id="arith-series">
+        initial term: <input type="number" id="arith-initial" value="0">
+        common difference: <input type="number" id="arith-cd" value="5">
+        <p><b>Terms:</b> <span id="arith-terms"></span></p>
+    </div>
+    <p>A general formula for the nth term of an arithmetic series is:</p>
+    <p class="msec">t(n) = n<sub>1</sub> + (n - 1)d</p>
+    <p>Where <b>n<sub>1</sub></b> is the initial term and <b>d</b> is the common difference.</p>
+
+    <h3>example problems</h3>
+
+    <p class="exprob"><b>Problem 1:</b> An arithmetic series has 10 terms. The fourth term is 24 and the tenth term is 96. What is the series?</p>
+    <p>We know that the 4th term is 24 so,</p>
+    <p class="msec">
+        24 = n<sub>1</sub> + (4 - 1)d<br>
+        24 = n<sub>1</sub> + 3d
+    </p>
+    <p>We also know that the 10th term is 96 so,</p>
+    <p class="msec">
+        96 = n<sub>1</sub> + (10 - 1)d<br>
+        96 = n<sub>1</sub> + 9d
+    </p>
+    <p>We can then solve this as a system of equations.</p>
+    <div class="msec">
+        <div class="subtract">
+            <span class="subtract-sign">-</span>
+            <span class="subtract-top">96 = n<sub>1</sub> + 9d</span>
+            <span class="subtract-bot">24 = n<sub>1</sub> + 3d</span> 
+        </div>
+        <p class="subtract-res">72 = 6d</p>
+        d = 12
+    </div>
+    <p>With the common difference we can now solve for <b>n<sub>1</sub></b>.</p>
+    <p class="msec">
+        24 = n<sub>1</sub> + 3(12)<br>
+        24 = n<sub>1</sub> + 36<br>
+        n<sub>1</sub> = -12
+    </p>
+    <p>Therefore the series is,</p>
+    <p class="msec">
+        t(n) = 12(n - 1) - 12
+    </p>
+    <p class="exprob"><b>Problem 2:</b> Peter likes to collect rocks and he collects 7 rocks every day. If he has 102 rocks on week 2, how many rocks did he have on day 3?</p>
+    <p>The common difference is given, 7 rocks per day, and we also know how many rocks he has on day 14, 102.</p>
+    <p class="msec">
+        102 = n<sub>1</sub> + (14 - 1)7<br>
+        102 = n<sub>1</sub> + (13)7<br>
+        102 = n<sub>1</sub> + 91<br>
+        n<sub>1</sub> = 11
+    </p>
+    <p>So the formula for this series is,</p>
+    <p class="msec">
+        t(n) = 11 + (n - 1)7
+    </p>
+    <p>Finally, we solve for the formula where <b>n</b> is 3.</p>
+    <p class="msec">
+        t(3) = 11 + (3 - 1)7<br>
+        t(3) = 11 + (2)7<br>
+        t(3) = 11 + 14<br>
+        t(3) = 25
+    </p>
+    <p>The solution is 25 rocks.</p>
+
+    <h2 id="geometric">geometric</h2>
+    <p>A geometric series is like an arithmetic series but instead of adding by a common difference, we multiply by a common ratio.</p>
+    <div id="geo-series">
+        initial term: <input type="number" id="geo-initial" value="1">
+        common ratio: <input type="number" id="geo-cd" value="2">
+        <p><b>Terms:</b> <span id="geo-terms"></span></p>
+    </div>
+    <p>A general formula for a geometric series is</p>
+    <p class="msec">t(n) = n<sub>1</sub> × r<sup>n - 1</sup></p>
+    <p>Where <b>n<sub>1</sub></b> is the initial term and <b>r</b> is the common ratio.</p>
+
+    <h3>example problems</h3>
+    <p class="exprob"><b>Problem 3:</b> A geometric series has 13 terms. The second term is 6 and the last term is 12288. What is the series?</p>
+    <p>We know that the 2nd term is 6.</p>
+    <p class="msec">
+        6 = n<sub>1</sub> × r<sup>2 - 1</sup><br>
+        6 = n<sub>1</sub> × r<sup>1</sup>
+    </p>
+    <p>We also know that the 13th term is 12288.</p>
+    <p class="msec">
+        12288 = n<sub>1</sub> × r<sup>13 - 1</sup><br>
+        12288 = n<sub>1</sub> × r<sup>12</sup>
+    </p>
+    <p>We can reorganize the equations in order to solve a system of equations.</p>
+    <p class="msec">
+        12288 = n<sub>1</sub> × r<sup>12</sup><br>
+        n<sub>1</sub> = 12288 ÷ r<sup>12</sup><br>
+        6 × r<sup>12</sup> = 12288 × r<sup>1</sup><br>
+        6 × r<sup>11</sup> = 12288<br>
+        r<sup>11</sup> = 2048<br>
+        r = 2
+    </p>
+    <p>With the common ratio, <b>r</b> we can find the initial term.</p>
+    <p class="msec">
+        6 = n<sub>1</sub> × 2<sup>1</sup><br>
+        6 = n<sub>1</sub> × 2<br>
+        n<sub>1</sub> = 3<br>
+    </p>
+    <p>So the series is:</p>
+    <p class="msec">
+        t(n) = 3 × 2<sup>n - 1</sup><br>
+    </p>
+
+    <p class="exprob">
+        <b>Problem 4:</b> Hoover likes to build model planes. Every week Hoover builds three times the amount of planes the previous week<br>
+        If Hoover builds a single plane on week one, by week 6, how many planes has he built?
+    </p>
+    <p>We are given the common ratio, 3 and the initial term, 1. We can construct the formula for the series.</p>
+    <p class="msec">
+        t(n) = 1 × 3<sup>n - 1</sup>
+    </p>
+    <p>Then we can replace <b>n</b> with 6, the number of weeks, and find out the amount of planes.</p>
+    <p class="msec">
+        t(3) = 1 × 3<sup>6 - 1</sup><br>
+        t(3) = 1 × 3<sup>5</sup><br>
+        t(3) = 1 × 243<br>
+        t(3) = 243
+    </p>
+    <p>Hoover has built 243 planes by week 6.</p>
+    
+
+    <h1 id="pascal">pascal's triangle</h1>
+
+    <h2>construction of the triangle</h2>
+    <p>
+        To construct Pascal's triangle you start with the number <b>1</b> on the first row. 
+    </p>
+    <p>
+        To make each additional row, you add the two numbers to the left and right on the previous row. 
+        In case the number does not exist, it should be treated as a zero.
+    </p>
+    <button type="button" id="construct-add-row">add row</button>
+    <button type="button" id="construct-flatten">flatten</button>
+    <button type="button" id="construct-reset">reset</button>
+    <div id="construct-tri">
+        <div class="construct-row"><p class="trinumber"></p><p class="trinumber"><b>1</b></p><p class="trinumber"></p></div>
+    </div>
+    <p class="hint" style="width: 500px;text-align: center;">(hover over the numbers)</p>
+
+    <h3>example problem</h3>
+    <p class="exprob"><b>Problem 5:</b> What is the 11th row of Pascal's triangle?</p>
+    <p>
+        Assuming Pascal's triangle has been built until the button stops working, <br>
+        we know row 10 of the triangle.
+    </p>
+    <p class="msec">
+        <b>Row 10:</b> 1 10 45 120 210 252 210 120 45 10 1
+    </p>
+    <p>
+        Starting with the first number of row 11, <b>1</b> <br>
+        since to the left of first number on the 10th row is nothing <br>
+        and the first number is 1.
+    </p>
+    <p class="msec">
+        <b>Row 11:</b> 1...
+    </p>
+    <p>
+        The second number is <b>11</b>.<br>
+        The second number in the previous row is 10,<br>
+        and the number to the left of it is 1 and 10 + 1 = 11.
+    </p>
+    <p class="msec">
+        <b>Row 11:</b> 1 11...
+    </p>
+    <p>
+        The third number is <b>55</b>.<br>
+        The third number in the previous row is 45,<br>
+        and the number to the left of it is 10 and 10 + 45 = 55.
+    </p>
+    <p class="msec">
+        <b>Row 11:</b> 1 11 55...
+    </p>
+    <p>
+        Repeat the process over and over until you get zero as the next number.
+    </p>
+    <p class="msec">
+        <b>Row 11:</b> 1 11 55 165 330 462 462 330 165 55 11 1
+    </p>
+
+    <h2>using the triangle to expand (a + b)<sup>n</sup></h2>
+    <p>
+        Expanding out (a + b)<sup>n</sup> by hand gets very difficult very quickly,
+        however Pascal's triangle can do most of the work for us.
+    </p>
+    <p>
+        Each row of the triangle gives us the factors of the terms of the binomial expansion.
+    </p>
+    
+    <div id="larger">
+    <div id="tri">
+        
+    </div>
+    <div id="other">
+        <p id="binom" class="math"></p>
+        <p id="seq" class="math"></p>
+        
+    </div>
+    <p class="hint" style="grid-column: 1/2;text-align: center;">(hover over the numbers)</p>
+    <!-- <div class="rot" style="width: 100px;background-color: orange; height: 26.4px;"></div> -->
+    </div>
+    <h3>example problem</h3>
+    <p class="exprob">
+        <b>Problem 6:</b> Expand the binomial (a + b)<sup>11</sup>
+    </p>
+    <p>Since we know row 11 of Pascal's triangle from Problem 5 we can use the rows previously calculated.</p>
+    <p class="msec">
+        <b>Row 11:</b> 1 11 55 165 330 462 462 330 165 55 11 1
+    </p>
+    <p>We start with <b>a<sup>11</sup></b> times <b>b<sup>0</sup></b> times the first number on the row, <b>1</b>.</p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>10</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>1</sup></b> and <br>
+        we use the second number on the row, <b>11</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>9</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>2</sup></b> and <br>
+        we use the third number on the row, <b>55</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>8</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>3</sup></b> and <br>
+        we use the fourth number on the row, <b>165</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>7</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>4</sup></b> and <br>
+        we use the fifth number on the row, <b>330</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+         + 330a<sup>7</sup>b<sup>4</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>6</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>5</sup></b> and <br>
+        we use the sixth number on the row, <b>462</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+         + 330a<sup>7</sup>b<sup>4</sup> + 462a<sup>6</sup>b<sup>5</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>5</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>6</sup></b> and <br>
+        we use the seventh number on the row, <b>462</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+         + 330a<sup>7</sup>b<sup>4</sup> + 462a<sup>6</sup>b<sup>5</sup> + 462a<sup>5</sup>b<sup>6</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>4</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>7</sup></b> and <br>
+        we use the ninth number on the row, <b>330</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+         + 330a<sup>7</sup>b<sup>4</sup> + 462a<sup>6</sup>b<sup>5</sup> + 462a<sup>5</sup>b<sup>6</sup> + 330a<sup>4</sup>b<sup>7</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>3</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>8</sup></b> and <br>
+        we use the tenth number on the row, <b>165</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+         + 330a<sup>7</sup>b<sup>4</sup> + 462a<sup>6</sup>b<sup>5</sup> + 462a<sup>5</sup>b<sup>6</sup> + 330a<sup>4</sup>b<sup>7</sup>
+         + 165a<sup>3</sup>b<sup>8</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>2</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>9</sup></b> and <br>
+        we use the eleventh number on the row, <b>55</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+         + 330a<sup>7</sup>b<sup>4</sup> + 462a<sup>6</sup>b<sup>5</sup> + 462a<sup>5</sup>b<sup>6</sup> + 330a<sup>4</sup>b<sup>7</sup>
+         + 165a<sup>3</sup>b<sup>8</sup> + 55a<sup>2</sup>b<sup>9</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>1</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>10</sup></b> and <br>
+        we use the twelth number on the row, <b>11</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+         + 330a<sup>7</sup>b<sup>4</sup> + 462a<sup>6</sup>b<sup>5</sup> + 462a<sup>5</sup>b<sup>6</sup> + 330a<sup>4</sup>b<sup>7</sup>
+         + 165a<sup>3</sup>b<sup>8</sup> + 55a<sup>2</sup>b<sup>9</sup> + 11ab<sup>10</sup>
+    </p>
+    <p>
+        Then the exponent of <b>a</b> goes down by one to <b>a<sup>0</sup></b>,<br>
+        the exponent of <b>b</b> goes up by one to <b>b<sup>11</sup></b> and <br>
+        we use the thirteenth number on the row, <b>1</b>.
+    </p>
+    <p class="msec">
+        (a + b)<sup>11</sup> = a<sup>11</sup> + 11a<sup>10</sup>b + 55a<sup>9</sup>b<sup>2</sup> + 165a<sup>8</sup>b<sup>3</sup>
+         + 330a<sup>7</sup>b<sup>4</sup> + 462a<sup>6</sup>b<sup>5</sup> + 462a<sup>5</sup>b<sup>6</sup> + 330a<sup>4</sup>b<sup>7</sup>
+         + 165a<sup>3</sup>b<sup>8</sup> + 55a<sup>2</sup>b<sup>9</sup> + 11ab<sup>10</sup> + 1b<sup>11</sup>
+    </p>
+    <p>
+        And then we get (a + b)<sup>11</sup>
+    </p>
+    <!--
+    <h2>pascal's triangle and series</h2>
+    <button type="button" id="row-col-swap">column mode</button>-->
+    <script src="ok.js"></script>
+</body>
+</html>
+
